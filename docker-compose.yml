@@ -88,10 +88,6 @@ services:
 #    ports:
 #      - "3306:3306"  # Uncomment if you need to access MySQL from outside Docker
 
-volumes:
-  pg_data:
-#  mysql_data:
-
   nginx:
     image: nginx:alpine
     container_name: nginx
@@ -106,6 +102,10 @@ volumes:
       - new-api
     networks:
       - new-api-network
+
+volumes:
+  pg_data:
+#  mysql_data:
 
 networks:
   new-api-network:
